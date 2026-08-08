@@ -1,0 +1,16 @@
+How They Fit Together (The Compilation Cycle)
+
+
+The Preprocessor (#include): When you compile, the #include "log.h" command basically copies and pastes the contents of log.h right into the top of main.cpp and log.cpp. This satisfies the compiler by proving that the functions are declared.
+
+The Compiler: The compiler looks at main.cpp and log.cpp independently, translating them into object files (main.o and log.o).
+
+The Linker (g++ main.cpp log.cpp): This is the crucial final step. The Linker takes main.o (which calls the functions) and log.o (which contains the functions) and stitches them together into your final executable (main.exe).
+
+If you forget to compile log.cpp alongside main.cpp, the compiler gets through the first two steps fine, but the Linker panics because it has a call to Log() in main with no physical implementation to point to—which results in that undefined reference error you saw earlier!
+
+
+to compile
+(in terminal)
+g++ main.cpp log.cpp -o OutputName 
+.\OutputName.exe
