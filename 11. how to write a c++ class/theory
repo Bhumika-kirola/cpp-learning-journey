@@ -1,0 +1,31 @@
+
+How They Fit Together (The Compilation Cycle)
+The Preprocessor (#include): When you compile, the #include "log.h" command basically copies and pastes the contents of log.h right into the top of main.cpp and log.cpp. This satisfies the compiler by proving that the functions are declared.
+
+The Compiler: The compiler looks at main.cpp and log.cpp independently, translating them into object files (main.o and log.o).
+
+The Linker (g++ main.cpp log.cpp): This is the crucial final step. The Linker takes main.o (which calls the functions) and log.o (which contains the functions) and stitches them together into your final executable (main.exe).
+
+If you forget to compile log.cpp alongside main.cpp, the compiler gets through the first two steps fine, but the Linker panics because it has a call to Log() in main with no physical implementation to point to—which results in that undefined reference error you saw earlier!
+
+
+
+
+
+
+In C++, std::cin.get(); pauses the program and waits for the user to press the Enter key before it continues or closes.
+
+Why is it used?
+When you run a C++ program from an IDE or by double-clicking the executable file, the program opens a command prompt window, executes all your code in a split second, and then instantly closes.
+
+Because it closes immediately, you wouldn't normally have time to see your output (like "Hello World!") printed on the screen.
+
+By putting std::cin.get(); at the end of your main() function:
+
+The program hits that line and pauses.
+
+It waits for keyboard input (specifically, waiting for you to press Enter).
+
+Once you press Enter, the program finishes and safely closes the console window.
+
+(Note: If you are running your program straight from an advanced terminal like PowerShell where the window stays open automatically after the program finishes, you technically don't need it, but it is a common helper line used in beginner tutorials so the console window doesn't vanish on you).
