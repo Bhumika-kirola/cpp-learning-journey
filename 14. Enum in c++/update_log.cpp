@@ -1,15 +1,17 @@
 #include <iostream>
 
+using namespace std;
+
 class Log 
 {
 public:
     enum level
     {
-        Error = 0, Warning, Info
+        error = 0, warn, info
     };
 
 private:
-    enum m_LogLevel = Info;
+    level m_LogLevel = info;
 
 public:
     void SetLevel(level level)
@@ -19,19 +21,19 @@ public:
 
     void Error(const char* message)
     {
-        if (m_LogLevel >= Error)
+        if (m_LogLevel >= error)
             std::cout << "[ERROR]: " << message << std::endl;
     }
 
     void Warn(const char* message)
     {
-        if (m_LogLevel >= Warning)
+        if (m_LogLevel >= warn)
             std::cout << "[WARNING]: " << message << std::endl;
     }
 
     void Info(const char* message)
     {
-        if (m_LogLevel >= Info)
+        if (m_LogLevel >= info)
             std::cout << "[INFO]: " << message << std::endl;
     }
 };
@@ -39,9 +41,9 @@ public:
 int main()
 {
     Log log;
-    log.SetLevel(Log::level);
+    log.SetLevel(Log::info);
     log.Warn("Hello");
     log.Info("Hello");
     log.Error("Hello");
-    std::cin.get();
+    cin.get();
 }
