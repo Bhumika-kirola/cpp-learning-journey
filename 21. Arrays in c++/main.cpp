@@ -1,17 +1,9 @@
-#include <iostream>
+//----------------------------------THEORY---------------------------------------------
+//Array: collection of elements of the same data type.
+//indexing: in array indexing from 0 to (size - 1)
 
-using namespace std;
 
 int main()
 {
-    int element[5];
-    for (int i = 0; i < 5; i++)
-    {
-        element[i] = 2;
-    }
-    for (int i = 0; i < 5; i++)
-    {
-        cout << element[i] << endl;
-    }
-    cout << "testing";
+	int example[5]; // defing a array: data_type name [size of array]; 
 }
