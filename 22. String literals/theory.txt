@@ -1,0 +1,5 @@
+NOTE: before this you should know about the array as its pratically tied with the string.
+
+Q- define string?
+so basically a string is the collection of the group of characters. In simple words its basically a text.
+
